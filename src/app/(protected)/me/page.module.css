@@ -1,0 +1,215 @@
+.container {
+  padding: var(--space-2);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.title {
+  font-size: var(--font-xl);
+  font-weight: var(--font-bold);
+}
+
+.signOutButton {
+  padding: var(--space-1) var(--space-2);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  border-radius: var(--radius);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  transition: all var(--transition-fast);
+}
+
+.signOutButton:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.card {
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.cardHeader h2 {
+  font-size: var(--font-lg);
+  font-weight: var(--font-semibold);
+}
+
+.editButton {
+  padding: var(--space-1) var(--space-2);
+  background-color: var(--bg-primary);
+  color: var(--primary);
+  border-radius: var(--radius);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  transition: all var(--transition-fast);
+}
+
+.editButton:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.statsGrid,
+.goalsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+
+.statItem,
+.goalItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-2);
+  background-color: var(--bg-primary);
+  border-radius: var(--radius);
+}
+
+.statValue,
+.goalValue {
+  font-size: var(--font-lg);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.statLabel,
+.goalLabel {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  text-align: center;
+}
+
+.emptyState p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-1);
+}
+
+.emptyHint {
+  font-size: var(--font-sm);
+  color: var(--text-tertiary);
+}
+
+.loading {
+  text-align: center;
+  padding: var(--space-3);
+  color: var(--text-secondary);
+}
+
+.weightSummary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background-color: var(--bg-primary);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-2);
+}
+
+.weightChange {
+  font-size: var(--font-lg);
+  font-weight: var(--font-bold);
+}
+
+.weightChange.up {
+  color: var(--error);
+}
+
+.weightChange.down {
+  color: var(--success);
+}
+
+.weightChangeLabel {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.weightList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.weightItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2);
+  background-color: var(--bg-primary);
+  border-radius: var(--radius);
+}
+
+.weightInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.weightValue {
+  font-size: var(--font-base);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+.weightDate {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.weightNotes {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+.weightActions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.iconButton {
+  padding: var(--space-1);
+  background: transparent;
+  color: var(--text-tertiary);
+  border-radius: var(--radius);
+  transition: all var(--transition-fast);
+}
+
+.iconButton:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.iconButton svg {
+  width: 18px;
+  height: 18px;
+}

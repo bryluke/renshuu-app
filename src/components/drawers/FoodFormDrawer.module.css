@@ -1,0 +1,171 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.loading {
+  text-align: center;
+  padding: var(--space-4);
+  color: var(--text-secondary);
+}
+
+.nutritionSummary {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark, #2563eb) 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3);
+  margin-bottom: var(--space-2);
+  box-shadow: var(--shadow-md);
+  z-index: 10;
+}
+
+.summaryTitle {
+  font-size: var(--font-xs);
+  font-weight: var(--font-semibold);
+  color: rgba(255, 255, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-1);
+}
+
+.summaryStats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.summaryMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: var(--space-3);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.summaryCalories {
+  font-size: 32px;
+  font-weight: var(--font-bold);
+  color: white;
+  line-height: 1;
+}
+
+.summaryLabel {
+  font-size: var(--font-xs);
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2px;
+}
+
+.summaryMacros {
+  display: flex;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.macro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.macroValue {
+  font-size: var(--font-lg);
+  font-weight: var(--font-bold);
+  color: white;
+  line-height: 1;
+}
+
+.macroLabel {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2px;
+}
+
+.sectionTitle {
+  font-size: var(--font-sm);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.portionList,
+.addonList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.portionItem,
+.addonItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-2);
+  background-color: var(--bg-secondary);
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.portionItem:hover,
+.addonItem:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.portionItem.selected,
+.addonItem.selected {
+  border-color: var(--primary);
+  background-color: var(--bg-tertiary);
+}
+
+.portionHeader,
+.addonHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.portionName,
+.addonName {
+  font-size: var(--font-base);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+}
+
+.checkmark {
+  font-size: var(--font-lg);
+  color: var(--primary);
+  font-weight: var(--font-bold);
+  margin-left: var(--space-1);
+}
+
+.portionNutrition,
+.addonNutrition {
+  font-size: var(--font-xs);
+  color: var(--text-secondary);
+}
+
+.saveButton {
+  width: 100%;
+  padding: var(--space-2);
+  background-color: var(--primary);
+  color: white;
+  border-radius: var(--radius);
+  font-size: var(--font-base);
+  font-weight: var(--font-semibold);
+  transition: all var(--transition-fast);
+}
+
+.saveButton:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.saveButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

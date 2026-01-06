@@ -1,0 +1,102 @@
+/* Base Drawer Styles - Mobile First Bottom Sheet */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-drawer);
+  animation: fadeIn var(--transition-fast);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.drawer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 90vh;
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  z-index: calc(var(--z-drawer) + 1);
+  animation: slideUp var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Drawer Handle */
+.handle {
+  width: 40px;
+  height: 4px;
+  background-color: var(--border);
+  border-radius: var(--radius-full);
+  margin: var(--space-2) auto var(--space-1);
+  flex-shrink: 0;
+}
+
+/* Drawer Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: var(--font-lg);
+  font-weight: var(--font-semibold);
+}
+
+.closeButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.closeButton:hover {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.closeIcon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Drawer Content */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-3);
+}
+
+/* Drawer Footer (for action buttons) */
+.footer {
+  padding: var(--space-3);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}

@@ -1,0 +1,89 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border);
+  z-index: var(--z-sticky);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nav {
+  height: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navGroup {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.navItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+  padding: 4px;
+  border-radius: var(--radius);
+  max-width: 80px;
+}
+
+.navItem:hover {
+  color: var(--text-secondary);
+}
+
+.navItem.active {
+  color: var(--accent);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.label {
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+}
+
+/* Center Action Button */
+.actionButton {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.actionButton:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-xl);
+}
+
+.actionButton:active {
+  transform: scale(0.95);
+}
+
+.actionIcon {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2.5px;
+}

@@ -1,0 +1,54 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut {
+  display: block;
+}
+
+.background {
+  fill: none;
+  stroke: var(--bg-tertiary);
+}
+
+.protein {
+  fill: none;
+  stroke: #ef4444;
+  stroke-linecap: butt;
+}
+
+.carbs {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-linecap: butt;
+}
+
+.fats {
+  fill: none;
+  stroke: #eab308;
+  stroke-linecap: butt;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.value {
+  font-size: var(--font-lg);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.label {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}

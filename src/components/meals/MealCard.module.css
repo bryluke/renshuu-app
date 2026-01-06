@@ -1,0 +1,123 @@
+.mealCard {
+  padding: var(--space-2);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.mealHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.mealType {
+  font-size: var(--font-sm);
+  font-weight: var(--font-semibold);
+  text-transform: capitalize;
+  color: var(--text-primary);
+}
+
+.mealCalories {
+  font-size: var(--font-sm);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+}
+
+.mealFoods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+  padding-left: var(--space-1);
+  border-left: 2px solid var(--border);
+}
+
+.foodItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.foodContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.foodInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.foodName {
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+}
+
+.foodPortion {
+  font-size: var(--font-xs);
+  color: var(--text-secondary);
+}
+
+.foodNutrition {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  padding-left: var(--space-2);
+}
+
+.foodMacros {
+  font-size: 10px;
+}
+
+.foodActions {
+  display: flex;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.editButton,
+.deleteButton {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.editButton:hover {
+  background-color: var(--accent, #3b82f6);
+  color: white;
+}
+
+.deleteButton {
+  font-size: 20px;
+}
+
+.deleteButton:hover {
+  background-color: var(--error, #ef4444);
+  color: white;
+}
+
+.mealMacros {
+  display: flex;
+  gap: var(--space-2);
+  font-size: var(--font-xs);
+  color: var(--text-secondary);
+  padding-top: var(--space-1);
+  border-top: 1px solid var(--border);
+}

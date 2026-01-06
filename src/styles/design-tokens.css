@@ -1,0 +1,153 @@
+/**
+ * Design Tokens
+ * Central source of truth for design system values
+ */
+
+:root {
+  /* ============================================
+     COLORS - Light Mode (Default)
+     ============================================ */
+
+  /* Backgrounds */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --bg-tertiary: #F1F3F5;
+
+  /* Text */
+  --text-primary: #212529;
+  --text-secondary: #6C757D;
+  --text-tertiary: #ADB5BD;
+
+  /* Borders & Dividers */
+  --border: #DEE2E6;
+  --shadow: rgba(0, 0, 0, 0.08);
+
+  /* Accent Color (HSL - user customizable) */
+  --accent-h: 210;  /* Blue default */
+  --accent-s: 80%;
+  --accent-l: 55%;  /* Light mode lightness */
+
+  /* Derived Accent Colors */
+  --accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+  --accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 5%));
+  --accent-light: hsl(var(--accent-h), var(--accent-s), 95%);
+  --accent-dark: hsl(var(--accent-h), var(--accent-s), 35%);
+
+  /* Feedback Colors */
+  --success: #10B981;
+  --error: #EF4444;
+  --warning: #F59E0B;
+  --info: var(--accent);
+
+
+  /* ============================================
+     TYPOGRAPHY
+     ============================================ */
+
+  /* Font Families */
+  --font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Font Sizes (base 16px) */
+  --font-xs: 0.75rem;    /* 12px */
+  --font-sm: 0.875rem;   /* 14px */
+  --font-base: 1rem;     /* 16px */
+  --font-lg: 1.25rem;    /* 20px */
+  --font-xl: 1.5rem;     /* 24px */
+  --font-2xl: 2rem;      /* 32px */
+
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line Heights */
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+
+
+  /* ============================================
+     SPACING (8px base)
+     ============================================ */
+
+  --space-1: 0.5rem;   /* 8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2rem;     /* 32px */
+  --space-6: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+
+
+  /* ============================================
+     BORDER RADIUS
+     ============================================ */
+
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+
+  /* ============================================
+     SHADOWS
+     ============================================ */
+
+  --shadow-sm: 0 1px 2px var(--shadow);
+  --shadow-md: 0 1px 3px var(--shadow);
+  --shadow-lg: 0 4px 6px var(--shadow);
+  --shadow-xl: 0 10px 15px var(--shadow);
+
+
+  /* ============================================
+     Z-INDEX LAYERS
+     ============================================ */
+
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-fixed: 1200;
+  --z-drawer: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-toast: 1600;
+
+
+  /* ============================================
+     TRANSITIONS
+     ============================================ */
+
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
+
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+
+[data-theme="dark"] {
+  /* Backgrounds */
+  --bg-primary: #1A1D1F;
+  --bg-secondary: #111315;
+  --bg-tertiary: #0D0F10;
+
+  /* Text */
+  --text-primary: #F8F9FA;
+  --text-secondary: #ADB5BD;
+  --text-tertiary: #6C757D;
+
+  /* Borders & Dividers */
+  --border: #343A40;
+  --shadow: rgba(0, 0, 0, 0.3);
+
+  /* Accent - adjust lightness for dark mode */
+  --accent-l: 60%;
+
+  /* Shadows - stronger in dark mode */
+  --shadow-sm: 0 1px 2px var(--shadow);
+  --shadow-md: 0 2px 4px var(--shadow);
+  --shadow-lg: 0 4px 8px var(--shadow);
+  --shadow-xl: 0 10px 20px var(--shadow);
+}
