@@ -1,0 +1,236 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  flex-wrap: wrap;
+}
+
+.searchWrap {
+  position: relative;
+}
+
+.searchInput {
+  padding: 8px 32px 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: var(--font-sm);
+  background: var(--bg-primary);
+  min-width: 220px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.clearButton {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--font-lg);
+  color: var(--text-tertiary);
+  line-height: 1;
+}
+
+.clearButton:hover {
+  color: var(--text-primary);
+}
+
+.select {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: var(--font-sm);
+  background: var(--bg-primary);
+  text-transform: capitalize;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.newButton {
+  padding: 8px 16px;
+  background: var(--accent);
+  color: white;
+  border-radius: var(--radius);
+  font-size: var(--font-sm);
+  font-weight: var(--font-medium);
+  transition: background var(--transition-fast);
+  white-space: nowrap;
+}
+
+.newButton:hover {
+  background: var(--accent-hover);
+}
+
+/* Table */
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-sm);
+}
+
+.table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: var(--font-semibold);
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: var(--bg-secondary);
+}
+
+.nameCell {
+  font-weight: var(--font-medium);
+  min-width: 200px;
+}
+
+.subcategoryCell {
+  color: var(--text-secondary);
+}
+
+.dateCell {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* Badges */
+.categoryBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+}
+
+.approved {
+  background: hsl(152, 69%, 93%);
+  color: hsl(152, 69%, 31%);
+}
+
+.pending {
+  background: hsl(38, 92%, 93%);
+  color: hsl(38, 92%, 40%);
+}
+
+/* Dark mode badge overrides */
+:global([data-theme="dark"]) .approved {
+  background: hsl(152, 40%, 18%);
+  color: hsl(152, 69%, 60%);
+}
+
+:global([data-theme="dark"]) .pending {
+  background: hsl(38, 40%, 18%);
+  color: hsl(38, 92%, 60%);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.approveButton,
+.editButton,
+.deleteButton {
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  font-weight: var(--font-medium);
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.approveButton {
+  color: var(--success);
+  border-color: var(--success);
+}
+
+.approveButton:hover {
+  background: var(--success);
+  color: white;
+}
+
+.editButton {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.editButton:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.deleteButton {
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.deleteButton:hover {
+  background: var(--error);
+  color: white;
+}
+
+/* States */
+.loadingState,
+.emptyState {
+  text-align: center;
+  padding: var(--space-4);
+  color: var(--text-secondary);
+  font-size: var(--font-sm);
+}
+
+.count {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  text-align: right;
+}
