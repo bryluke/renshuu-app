@@ -33,6 +33,7 @@ Detailed documentation for each implemented feature:
 - **`08-weight-logging-and-profile.md`** - Weight logging, profile page, goals setting
 - **`09-refresh-context.md`** - Cross-component data refresh (pub/sub pattern)
 - **`10-custom-foods.md`** - User-created foods, MFP-style flow, RLS visibility
+- **`11-admin-dashboard.md`** - Admin dashboard, food CRUD, inline portions/addons editing
 
 ### When Starting a New Session
 1. **Quick context**: Read this CLAUDE.md file first
@@ -185,10 +186,19 @@ npm run lint         # ESLint
   - Recent foods shown in search for quick access
   - Search input with X clear button
 
+- **Admin Dashboard (`/admin`)**:
+  - Separate `(admin)` route group (desktop layout, full-width, no footer)
+  - Auth + admin role guard (redirects non-admins)
+  - Extensible tab bar (Foods tab implemented)
+  - Food list view: search, category/status filters, approve/edit/delete
+  - Food editor: create/edit form with 2-column grid
+  - Portions sub-table: inline CRUD (add/edit/delete rows)
+  - Addons sub-table: inline CRUD with category field (sauce/topping/side)
+
 **What's Next** 🚧:
 - **Meal Templates**: Save and reuse common meal combinations
 - **Analytics**: Weekly summaries, streak tracking, pattern insights
-- **Admin Dashboard**: Review and approve user-created foods
+- **Admin Dashboard Extensions**: Food requests review, user management
 
 **See**: `docs/changelogs/` for detailed implementation of completed features
 
@@ -286,6 +296,9 @@ setIsOpen(false);
 | SVG Donut Chart | `MacroDonut` | Multi-segment breakdown (e.g., macros) |
 | Search with Recent Items | `FoodSearchDrawer` | Search input with recent history and clear button |
 | User-Created Content + Admin Approval | `CustomFoodFormDrawer`, RLS policies | Content visible only to creator until approved |
+| Admin Route Group | `(admin)/layout.tsx` | Desktop-only admin pages (full-width, no footer, role guard) |
+| Inline CRUD Table | `PortionsTable`, `AddonsTable` | Editable table rows with add/edit/save/cancel inline |
+| State-based View Routing | `admin/page.tsx` (`selectedFoodId`) | Toggle between list and editor views without nested routes |
 
 ## Environment Variables
 
@@ -317,10 +330,12 @@ git status                     # Check current changes
 src/
 ├── app/
 │   ├── (public)/             # Public routes (/, /auth)
-│   └── (protected)/          # Protected routes
-│       ├── dashboard/        # Today's meals dashboard
-│       ├── meals/            # Meals management page
-│       └── me/               # Profile page
+│   ├── (protected)/          # Protected routes (mobile, max-width 768px)
+│   │   ├── dashboard/        # Today's meals dashboard
+│   │   ├── meals/            # Meals management page
+│   │   └── me/               # Profile page
+│   └── (admin)/              # Admin routes (desktop, max-width 1400px)
+│       └── admin/            # Admin dashboard with tabs
 ├── components/
 │   ├── charts/               # Data visualizations
 │   │   ├── CalorieRing       # Circular calorie progress
@@ -332,6 +347,11 @@ src/
 │   │   ├── ProfileFormDrawer # Body stats editor
 │   │   ├── GoalsFormDrawer   # Nutrition goals editor
 │   │   └── ...               # Other meal-related drawers
+│   ├── admin/                # Admin components
+│   │   ├── FoodTable         # Food list with search/filter/actions
+│   │   ├── FoodEditor        # Food form + portions/addons sections
+│   │   ├── PortionsTable     # Inline CRUD for food_portions
+│   │   └── AddonsTable       # Inline CRUD for food_addons
 │   ├── meals/                # MealCard, meal display
 │   └── layout/               # Footer, etc.
 ├── contexts/                 # Theme, Auth, Drawer, Refresh contexts
@@ -345,7 +365,7 @@ src/
 docs/
 ├── DB_SCHEMA.md             # Full database schema
 ├── FRONTEND.md              # Frontend architecture
-└── changelogs/              # Feature-specific docs (00-10)
+└── changelogs/              # Feature-specific docs (00-11)
 ```
 
 ### Feature Development Checklist
