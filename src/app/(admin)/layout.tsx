@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 import styles from './layout.module.css';
 
 export default function AdminLayout({
@@ -44,6 +45,7 @@ export default function AdminLayout({
       <header className={styles.header}>
         <h1 className={styles.title}>Renshuu Admin</h1>
         <div className={styles.headerRight}>
+          <ThemeToggle />
           <span className={styles.userName}>{profile.full_name}</span>
           <button onClick={signOut} className={styles.signOutButton}>
             Sign Out

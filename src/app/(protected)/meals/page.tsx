@@ -107,10 +107,6 @@ export default function MealsPage() {
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <h1 className={styles.title}>Meals</h1>
-      </header>
-
       <div className={styles.dateNavigation}>
         <button
           onClick={handlePreviousDay}

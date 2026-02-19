@@ -51,10 +51,7 @@ export default function DashboardPage() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <div>
-          <h1 className={styles.title}>Dashboard</h1>
-          <p className={styles.greeting}>Welcome back, {profile?.full_name || 'User'}!</p>
-        </div>
+        <p className={styles.greeting}>Welcome back, {profile?.full_name || 'User'}!</p>
         <button onClick={signOut} className={styles.signOutButton}>
           Sign Out
         </button>

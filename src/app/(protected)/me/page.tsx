@@ -114,7 +114,6 @@ export default function ProfilePage() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Profile</h1>
         <button onClick={signOut} className={styles.signOutButton}>
           Sign Out
         </button>

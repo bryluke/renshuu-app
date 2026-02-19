@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
+import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { DrawerContainer } from '@/components/drawers/DrawerContainer';
 import styles from './layout.module.css';
@@ -38,6 +39,7 @@ export default function ProtectedLayout({
 
   return (
     <div className={styles.container}>
+      <Header />
       <main className={styles.main}>{children}</main>
       <Footer />
       <DrawerContainer />
